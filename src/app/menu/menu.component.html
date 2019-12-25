@@ -1,0 +1,7 @@
+<mat-card>
+  <button mat-button [matMenuTriggerFor]="aboveMenu">Above</button>
+  <mat-menu #aboveMenu="matMenu" yPosition="above">
+    <button mat-menu-item routerLink="movies" (click)="handleMenuItemClick($event)">Item 1</button>
+    <button mat-menu-item value="menu"  (click)="handleMenuItemClick($event)">Item 2</button>
+  </mat-menu>
+</mat-card>
