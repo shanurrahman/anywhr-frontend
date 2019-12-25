@@ -9,6 +9,8 @@ import {MatTableModule} from '@angular/material/table';
 import { MenuComponent } from './menu/menu.component';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatCardModule} from '@angular/material/card';
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 @NgModule({
@@ -23,7 +25,8 @@ import {MatCardModule} from '@angular/material/card';
     BrowserAnimationsModule,
     MatTableModule,
     MatMenuModule,
-    MatCardModule
+    MatCardModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

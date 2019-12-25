@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MovieService } from '../movie.service';
 
 
 export interface PeriodicElement {
@@ -30,9 +31,16 @@ export class MovieComponent implements OnInit {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = ELEMENT_DATA;
 
-  constructor() { }
+  constructor(
+    private movieService: MovieService
+  ) { }
 
   ngOnInit() {
+    this.movieService.getAllMovies().subscribe(data=>{
+      alert("data received")
+    }, error=>{
+      // alert("Error occured")
+    })
   }
 
 }
