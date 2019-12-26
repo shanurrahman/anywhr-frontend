@@ -35,7 +35,7 @@ export class MovieDetailComponent implements OnInit, OnDestroy {
   }
 
   loadMovieData(title) {
-    this.loadByTitleSub = this.movieService.getMovieByTitle(title).subscribe(data => {
+    this.loadByTitleSub = this.movieService.getMovieShootingLocations(title).subscribe(data => {
       console.log(data);
       this.movie = data;
     }, error => {
