@@ -35,4 +35,9 @@ export class MovieService {
     // can use a pipe and map operator to send exactly what is required
     return this.http.get<any>(`${this.apiURL}/movies?title=${searchTerm}`);
   }
+
+  public getMovieShootingLocations(title) {
+    // can use a pipe and map operator to send exactly what is required
+    return this.http.get<any>(`${this.apiURL}/movies?shotLocation=${title}`);
+  }
 }

@@ -9,6 +9,9 @@ import { MenuComponent } from './menu/menu.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import {NgbPaginationModule} from '@ng-bootstrap/ng-bootstrap';
+import { MovieDetailComponent } from './movie-detail/movie-detail.component';
+import { NgxSpinnerModule } from "ngx-spinner";
+
 
 
 
@@ -16,7 +19,8 @@ import {NgbPaginationModule} from '@ng-bootstrap/ng-bootstrap';
   declarations: [
     AppComponent,
     MovieComponent,
-    MenuComponent
+    MenuComponent,
+    MovieDetailComponent
   ],
   imports: [
     NgbPaginationModule,
@@ -24,7 +28,8 @@ import {NgbPaginationModule} from '@ng-bootstrap/ng-bootstrap';
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,8 +1,8 @@
 
-<table class="table table-hover table-dark" style="margin-top: 55px;">
+<ngx-spinner></ngx-spinner>
+<table class="table table-hover table-dark">
   <thead>
     <tr>
-      <th scope="col">Id</th>
       <th scope="col">Title</th>
       <th scope="col">Release Year</th>
       <!-- <th scope="col">Fun Facts</th> -->
@@ -16,19 +16,18 @@
   <tbody>
     <ng-container *ngFor="let movie of movies">
       <tr (click)="showMovieDetails(movie.id)">
-          <th scope="row">{{movie.id}}</th>
-          <td>{{movie.title}}</td>
-          <td>{{movie.release_year}}</td>
+          <td>{{movie?.title}}</td>
+          <td>{{movie?.release_year}}</td>
           <!-- <td>{{movie.fun_facts}}</td> -->
-          <td>{{movie.production_company}}</td>
-          <td>{{movie.distributor}}</td>
-          <td>{{movie.director}}</td>
-          <td>{{movie.writer}}</td>
-          <td>{{movie.actor_1}}</td>
+          <td>{{movie?.production_company}}</td>
+          <td>{{movie?.distributor}}</td>
+          <td>{{movie?.director}}</td>
+          <td>{{movie?.writer}}</td>
+          <td>{{movie?.actor_1}}</td>
         </tr>
     </ng-container>
   </tbody>
 </table>
 
-<ngb-pagination class="d-flex justify-content-center" [collectionSize]="70" [(page)]="page" (pageChange)="onPageChange($event)"></ngb-pagination>
+<ngb-pagination class="d-flex justify-content-center" [rotate]="true" [collectionSize]="collectionSize" [(page)]="page" (pageChange)="onPageChange($event)"></ngb-pagination>
 
