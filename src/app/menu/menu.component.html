@@ -6,9 +6,10 @@
         type="search"
         name="ara"
         class="form-control"
-        placeholder="Mağaza'da Ara"
+        placeholder="Enter Movie Name"
+        [(ngModel)]="searchTerm"
       />
-      <button class="btn"><span class="material-icons">search</span></button>
+      <button class="btn" (click)=handleSearchClick(searchTerm)><span class="material-icons">search</span></button>
     </li>
   </ul>
 </nav>

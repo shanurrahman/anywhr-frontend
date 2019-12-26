@@ -1,102 +1,29 @@
-<div class="row border border-default">
-  <div class="bg-primary text-center p-2 col-md-12">
-    <p class="lead text-white" style="margin-top: 80px;">TITLE GOES HERE</p>
-  </div>
 
-  <div class="text-center p-2 col-md-12 text-white bg-primary border-top">
-    <p>[includes-short]</p>
-  </div>
-
-  <div
-    class="bg-secondary text-white p-2 mb-3 col-3 text-center d-none d-sm-block"
-  >
-    <p>GATEWAY</p>
-  </div>
-  <div
-    class="bg-secondary text-white p-2 mb-3 col-3 text-center d-block d-sm-none small"
-  >
-    <p>GATE</p>
-  </div>
-  <div
-    class="bg-secondary text-white p-2 mb-3 col-3 text-center d-none d-sm-block"
-  >
-    <p>INSIDE</p>
-  </div>
-  <div
-    class="bg-secondary text-white p-2 mb-3 col-3 text-center d-block d-sm-none small"
-  >
-    <p>INS</p>
-  </div>
-  <div
-    class="bg-secondary text-white p-2 mb-3 col-3 text-center d-none d-sm-block"
-  >
-    <p>BALCONY</p>
-  </div>
-  <div
-    class="bg-secondary text-white p-2 mb-3 col-3 text-center d-block d-sm-none small"
-  >
-    <p>BAL</p>
-  </div>
-  <div
-    class="bg-secondary text-white p-2 mb-3 col-3 text-center d-none d-sm-block"
-  >
-    <p>MINI-SUITE</p>
-  </div>
-  <div
-    class="bg-secondary text-white p-2 mb-3 col-3 text-center d-block d-sm-none small"
-  >
-    <p>SUI</p>
-  </div>
-
-  <div class="py-2 col-3 text-center d-none d-sm-block small">
-    <p>price from</p>
-  </div>
-  <div class="py-2 col-3 text-center d-block d-sm-none small">
-    <p>from</p>
-  </div>
-  <div class="py-2 odd col-3 text-center">
-    <del>$X,XXX</del>
-  </div>
-  <div class="py-2even col-3 text-center">
-    <del>$X,XXX</del>
-  </div>
-  <div class="py-2 odd col-3 text-center">
-    <del>$X,XXX</del>
-  </div>
-
-  <div class="py-2 col-3 text-center d-none d-sm-block gateway">
-    <p>Vancouver</p>
-  </div>
-  <div class="py-2 col-3 text-center d-block d-sm-none">
-    <p>YVR</p>
-  </div>
-  <div class="py-2 odd col-3 text-center">
-    <p class="mark text-danger lead font-weight-bold">$X,XXX</p>
-  </div>
-  <div class="py-2 even col-3 text-center">
-    <p class="mark text-danger lead font-weight-bold">$X,XXX</p>
-  </div>
-  <div class="py-2 odd col-3 text-center">
-    <p class="mark text-danger lead font-weight-bold">$X,XXX</p>
-  </div>
-
-  <div class="py-2 col-3 text-center d-none d-sm-block gateway">
-    <p>Toronto</p>
-  </div>
-  <div class="py-2 col-3 text-center d-block d-sm-none">
-    <p>YYZ</p>
-  </div>
-  <div class="py-2 odd col-3 text-center">
-    <p class="mark text-danger lead font-weight-bold">$X,XXX</p>
-  </div>
-  <div class="py-2 even col-3 text-center">
-    <p class="mark text-danger lead font-weight-bold">$X,XXX</p>
-  </div>
-  <div class="py-2 odd col-3 text-center">
-    <p class="mark text-danger lead font-weight-bold">$X,XXX</p>
-  </div>
-
-  <div class="text-center border py-4 col-md text-secondary">
-    <p>[disclaimer-short]</p>
-  </div>
-</div>
+<table class="table table-hover table-dark" style="margin-top: 55px;">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Title</th>
+      <th scope="col">Release Year</th>
+      <!-- <th scope="col">Fun Facts</th> -->
+      <th scope="col">Production Company</th>
+      <th scope="col">Distributor</th>
+      <th scope="col">Director</th>
+      <th scope="col">Writer</th>
+      <th scope="col">Main Actor</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let movie of movies">
+      <th scope="row">{{movie.id}}</th>
+      <td>{{movie.title}}</td>
+      <td>{{movie.release_year}}</td>
+      <!-- <td>{{movie.fun_facts}}</td> -->
+      <td>{{movie.production_company}}</td>
+      <td>{{movie.distributor}}</td>
+      <td>{{movie.director}}</td>
+      <td>{{movie.writer}}</td>
+      <td>{{movie.actor_1}}</td>
+    </tr>
+  </tbody>
+</table>

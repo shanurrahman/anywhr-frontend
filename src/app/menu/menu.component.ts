@@ -9,11 +9,15 @@ import { PubsubService } from '../pubsub.service';
 })
 export class MenuComponent implements OnInit {
 
-  constructor(private router: Router) { }
-
+  constructor(private router: Router, private pubsub: PubsubService) { }
+  searchTerm = '';
   ngOnInit() {
   }
 
-  handleMenuItemClick(event){
+  handleSearchClick(event){
+    console.log(event);
+    this.pubsub.$pub('search', {
+      searchTerm: event
+    })
   }
 }
