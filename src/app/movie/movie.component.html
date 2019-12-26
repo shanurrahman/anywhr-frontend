@@ -1,33 +1,102 @@
+<div class="row border border-default">
+  <div class="bg-primary text-center p-2 col-md-12">
+    <p class="lead text-white" style="margin-top: 80px;">TITLE GOES HERE</p>
+  </div>
 
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <div class="text-center p-2 col-md-12 text-white bg-primary border-top">
+    <p>[includes-short]</p>
+  </div>
 
-  <!--- Note that these columns can be defined in any order.
-        The actual rendered columns are set as a property on the row definition" -->
+  <div
+    class="bg-secondary text-white p-2 mb-3 col-3 text-center d-none d-sm-block"
+  >
+    <p>GATEWAY</p>
+  </div>
+  <div
+    class="bg-secondary text-white p-2 mb-3 col-3 text-center d-block d-sm-none small"
+  >
+    <p>GATE</p>
+  </div>
+  <div
+    class="bg-secondary text-white p-2 mb-3 col-3 text-center d-none d-sm-block"
+  >
+    <p>INSIDE</p>
+  </div>
+  <div
+    class="bg-secondary text-white p-2 mb-3 col-3 text-center d-block d-sm-none small"
+  >
+    <p>INS</p>
+  </div>
+  <div
+    class="bg-secondary text-white p-2 mb-3 col-3 text-center d-none d-sm-block"
+  >
+    <p>BALCONY</p>
+  </div>
+  <div
+    class="bg-secondary text-white p-2 mb-3 col-3 text-center d-block d-sm-none small"
+  >
+    <p>BAL</p>
+  </div>
+  <div
+    class="bg-secondary text-white p-2 mb-3 col-3 text-center d-none d-sm-block"
+  >
+    <p>MINI-SUITE</p>
+  </div>
+  <div
+    class="bg-secondary text-white p-2 mb-3 col-3 text-center d-block d-sm-none small"
+  >
+    <p>SUI</p>
+  </div>
 
-  <!-- Position Column -->
-  <ng-container matColumnDef="position">
-    <th mat-header-cell *matHeaderCellDef> No. </th>
-    <td mat-cell *matCellDef="let element"> {{element.position}} </td>
-  </ng-container>
+  <div class="py-2 col-3 text-center d-none d-sm-block small">
+    <p>price from</p>
+  </div>
+  <div class="py-2 col-3 text-center d-block d-sm-none small">
+    <p>from</p>
+  </div>
+  <div class="py-2 odd col-3 text-center">
+    <del>$X,XXX</del>
+  </div>
+  <div class="py-2even col-3 text-center">
+    <del>$X,XXX</del>
+  </div>
+  <div class="py-2 odd col-3 text-center">
+    <del>$X,XXX</del>
+  </div>
 
-  <!-- Name Column -->
-  <ng-container matColumnDef="name">
-    <th mat-header-cell *matHeaderCellDef> Name </th>
-    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-  </ng-container>
+  <div class="py-2 col-3 text-center d-none d-sm-block gateway">
+    <p>Vancouver</p>
+  </div>
+  <div class="py-2 col-3 text-center d-block d-sm-none">
+    <p>YVR</p>
+  </div>
+  <div class="py-2 odd col-3 text-center">
+    <p class="mark text-danger lead font-weight-bold">$X,XXX</p>
+  </div>
+  <div class="py-2 even col-3 text-center">
+    <p class="mark text-danger lead font-weight-bold">$X,XXX</p>
+  </div>
+  <div class="py-2 odd col-3 text-center">
+    <p class="mark text-danger lead font-weight-bold">$X,XXX</p>
+  </div>
 
-  <!-- Weight Column -->
-  <ng-container matColumnDef="weight">
-    <th mat-header-cell *matHeaderCellDef> Weight </th>
-    <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
-  </ng-container>
+  <div class="py-2 col-3 text-center d-none d-sm-block gateway">
+    <p>Toronto</p>
+  </div>
+  <div class="py-2 col-3 text-center d-block d-sm-none">
+    <p>YYZ</p>
+  </div>
+  <div class="py-2 odd col-3 text-center">
+    <p class="mark text-danger lead font-weight-bold">$X,XXX</p>
+  </div>
+  <div class="py-2 even col-3 text-center">
+    <p class="mark text-danger lead font-weight-bold">$X,XXX</p>
+  </div>
+  <div class="py-2 odd col-3 text-center">
+    <p class="mark text-danger lead font-weight-bold">$X,XXX</p>
+  </div>
 
-  <!-- Symbol Column -->
-  <ng-container matColumnDef="symbol">
-    <th mat-header-cell *matHeaderCellDef> Symbol </th>
-    <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
-  </ng-container>
-
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table>
+  <div class="text-center border py-4 col-md text-secondary">
+    <p>[disclaimer-short]</p>
+  </div>
+</div>

@@ -5,10 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MovieComponent } from './movie/movie.component';
-import {MatTableModule} from '@angular/material/table';
 import { MenuComponent } from './menu/menu.component';
-import {MatMenuModule} from '@angular/material/menu';
-import {MatCardModule} from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
 
 
@@ -23,9 +20,6 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatTableModule,
-    MatMenuModule,
-    MatCardModule,
     HttpClientModule
   ],
   providers: [],

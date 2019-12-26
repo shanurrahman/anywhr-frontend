@@ -1,7 +1,15 @@
-<mat-card>
-  <button mat-button [matMenuTriggerFor]="aboveMenu">Above</button>
-  <mat-menu #aboveMenu="matMenu" yPosition="above">
-    <button mat-menu-item routerLink="movies" (click)="handleMenuItemClick($event)">Item 1</button>
-    <button mat-menu-item value="menu"  (click)="handleMenuItemClick($event)">Item 2</button>
-  </mat-menu>
-</mat-card>
+<nav class="navbar_menu fixed-top">
+  <a href="" class="logo"> <strong>L</strong>ogo </a>
+  <ul class="arama">
+    <li class="input-group">
+      <input
+        type="search"
+        name="ara"
+        class="form-control"
+        placeholder="Mağaza'da Ara"
+      />
+      <button class="btn"><span class="material-icons">search</span></button>
+    </li>
+  </ul>
+</nav>
+
