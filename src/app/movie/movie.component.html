@@ -15,7 +15,7 @@
   </thead>
   <tbody>
     <ng-container *ngFor="let movie of movies">
-      <tr (click)="showMovieDetails(movie.id)">
+      <tr (click)="showMovieDetails(movie.title)">
           <td>{{movie?.title}}</td>
           <td>{{movie?.release_year}}</td>
           <!-- <td>{{movie.fun_facts}}</td> -->

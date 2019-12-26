@@ -33,7 +33,7 @@ export class MovieService {
 
   public getSuggestedMovies(searchTerm) {
     // can use a pipe and map operator to send exactly what is required
-    return this.http.get<any>(`${this.apiURL}/movies?title=${searchTerm}`);
+    return this.http.get<any>(`${this.apiURL}/movies/suggest?title=${searchTerm}`);
   }
 
   public getMovieShootingLocations(title) {

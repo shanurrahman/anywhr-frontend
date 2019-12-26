@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { MovieService } from '../movie.service';
 import { PubsubService } from '../pubsub.service';
 import { IMOVIE } from './movie.interface';
 import { Router } from '@angular/router';
 import { NgxSpinnerService } from "ngx-spinner";
+import { Subscribable, Subscription } from 'rxjs';
 
 
 @Component({
@@ -11,10 +12,14 @@ import { NgxSpinnerService } from "ngx-spinner";
   templateUrl: './movie.component.html',
   styleUrls: ['./movie.component.scss']
 })
-export class MovieComponent implements OnInit {
+export class MovieComponent implements OnInit, OnDestroy {
   movies: IMOVIE[] = [];
   page = 1;
-  collectionSize = 50
+  collectionSize = 50;
+  movieSubscription: Subscription;
+  suggestedSubs: Subscription;
+  pbsb: Subscription;
+
   constructor(
     private movieService: MovieService,
     private pubsub: PubsubService,
@@ -25,7 +30,7 @@ export class MovieComponent implements OnInit {
   ngOnInit() {
     this.initListeners();
     this.spinner.show();
-    this.movieService.getAllMovies(this.page, 20).subscribe((result: any) => {
+    this.movieSubscription = this.movieService.getAllMovies(this.page, 20).subscribe((result: any) => {
       this.spinner.hide();
       this.movies = result.data;
       this.collectionSize = result.total;
@@ -35,18 +40,17 @@ export class MovieComponent implements OnInit {
     })
   }
 
-
   initListeners() {
-    this.pubsub.$sub('search', data => {
+    this.pbsb = this.pubsub.$sub('search', data => {
       console.log(data);
       this.showSuggestedMovies(data.searchTerm);
     });
   }
 
   showMovieDetails(title) {
-    this.router.navigate(['movie'], { queryParams: { filter: `${title}`}, queryParamsHandling: 'merge' });
+    console.log(title);
+    this.router.navigate(['/movie'], { queryParams: { title } });
   }
-
 
   showSuggestedMovies(searchTerm) {
     this.spinner.show();
@@ -59,11 +63,10 @@ export class MovieComponent implements OnInit {
     })
   }
 
-
   onPageChange(e) {
     console.log("page changed");
     this.spinner.show();
-    this.movieService.getAllMovies(this.page, 20).subscribe((result :any)=> {
+    this.suggestedSubs = this.movieService.getAllMovies(this.page, 20).subscribe((result :any)=> {
       this.spinner.hide();
       this.movies = result.data;
       this.collectionSize = result.total;
@@ -71,5 +74,11 @@ export class MovieComponent implements OnInit {
       this.spinner.hide();
       console.log(error);
     });
+  }
+
+  ngOnDestroy(){
+    this.movieSubscription && this.movieSubscription.unsubscribe();
+    this.suggestedSubs && this.suggestedSubs.unsubscribe();
+    this.pbsb && this.pbsb.unsubscribe();
   }
 }
