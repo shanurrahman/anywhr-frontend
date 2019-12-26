@@ -14,16 +14,21 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let movie of movies">
-      <th scope="row">{{movie.id}}</th>
-      <td>{{movie.title}}</td>
-      <td>{{movie.release_year}}</td>
-      <!-- <td>{{movie.fun_facts}}</td> -->
-      <td>{{movie.production_company}}</td>
-      <td>{{movie.distributor}}</td>
-      <td>{{movie.director}}</td>
-      <td>{{movie.writer}}</td>
-      <td>{{movie.actor_1}}</td>
-    </tr>
+    <ng-container *ngFor="let movie of movies">
+      <tr (click)="showMovieDetails(movie.id)">
+          <th scope="row">{{movie.id}}</th>
+          <td>{{movie.title}}</td>
+          <td>{{movie.release_year}}</td>
+          <!-- <td>{{movie.fun_facts}}</td> -->
+          <td>{{movie.production_company}}</td>
+          <td>{{movie.distributor}}</td>
+          <td>{{movie.director}}</td>
+          <td>{{movie.writer}}</td>
+          <td>{{movie.actor_1}}</td>
+        </tr>
+    </ng-container>
   </tbody>
 </table>
+
+<ngb-pagination class="d-flex justify-content-center" [collectionSize]="70" [(page)]="page" (pageChange)="onPageChange($event)"></ngb-pagination>
+
