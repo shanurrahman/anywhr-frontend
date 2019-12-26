@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { PubsubService } from '../pubsub.service';
 
 @Component({
   selector: 'app-menu',
@@ -14,6 +15,5 @@ export class MenuComponent implements OnInit {
   }
 
   handleMenuItemClick(event){
-
   }
 }
