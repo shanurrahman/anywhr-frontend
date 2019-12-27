@@ -10,7 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {NgbPaginationModule} from '@ng-bootstrap/ng-bootstrap';
 import { MovieDetailComponent } from './movie-detail/movie-detail.component';
-import { NgxSpinnerModule } from "ngx-spinner";
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 
 

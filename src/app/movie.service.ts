@@ -16,7 +16,7 @@ export class MovieService {
   /**  @Todo remove any after defining types
    * Also send pagination data
   */
-  public getAllMovies(page=1, perPage=20) {
+  public getAllMovies(page = 1, perPage = 20) {
     // can use a pipe and map operator to send exactly what is required
     return this.http.get<any[]>(`${this.apiURL}/movies?page=${page}&perPage=${perPage}`);
   }
@@ -39,5 +39,24 @@ export class MovieService {
   public getMovieShootingLocations(title) {
     // can use a pipe and map operator to send exactly what is required
     return this.http.get<any>(`${this.apiURL}/movies/shotLocation?title=${title}`);
+  }
+
+  public wikiSearch(term) {
+    let url = 'https://en.wikipedia.org/w/api.php';
+
+    const params = {
+      action: 'query',
+      list: 'search',
+      srsearch: 'Nelson Mandela',
+      format: 'json'
+    };
+
+    console.log("term received", term)
+    params.srsearch = term;
+    url = url + '?origin=*';
+    Object.keys(params).forEach((key) => { url += '&' + key + '=' + params[key]; });
+
+    // can use a pipe and map operator to send exactly what is required
+    return this.http.get<any>(url);
   }
 }

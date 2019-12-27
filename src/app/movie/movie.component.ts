@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { NgxSpinnerService } from "ngx-spinner";
 import { Subscription } from 'rxjs';
 import { FormControl } from '@angular/forms';
+import {Constants} from '../names.constants';
 
 
 
@@ -46,7 +47,7 @@ export class MovieComponent implements OnInit, OnDestroy {
   }
 
   initListeners() {
-    this.pbsb = this.pubsub.$sub('search', data => {
+    this.pbsb = this.pubsub.$sub(Constants.SEARCH, data => {
       console.log(data);
       this.showSuggestedMovies(data.searchTerm);
     });

@@ -1,5 +1,4 @@
 export interface IMOVIE {
-  id: number;
   title?: string;
   release_year?: string;
   fun_facts?: string;
