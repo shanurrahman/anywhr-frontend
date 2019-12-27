@@ -48,7 +48,7 @@ export class MovieComponent implements OnInit, OnDestroy {
 
   initListeners() {
     this.pbsb = this.pubsub.$sub(Constants.SEARCH, data => {
-      console.log(data);
+      console.log(data)
       this.showSuggestedMovies(data.searchTerm);
     });
   }
