@@ -4,7 +4,9 @@ import { PubsubService } from '../pubsub.service';
 import { IMOVIE } from './movie.interface';
 import { Router } from '@angular/router';
 import { NgxSpinnerService } from "ngx-spinner";
-import { Subscribable, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
+import { FormControl } from '@angular/forms';
+
 
 
 @Component({
@@ -27,6 +29,9 @@ export class MovieComponent implements OnInit, OnDestroy {
     private spinner: NgxSpinnerService
   ) { }
 
+
+  firstNameControl = new FormControl();
+  formCtrlSub: Subscription;
   ngOnInit() {
     this.initListeners();
     this.spinner.show();
@@ -37,7 +42,7 @@ export class MovieComponent implements OnInit, OnDestroy {
     }, error => {
       this.spinner.hide();
       alert("Error occured")
-    })
+    });
   }
 
   initListeners() {
@@ -64,7 +69,6 @@ export class MovieComponent implements OnInit, OnDestroy {
   }
 
   onPageChange(e) {
-    console.log("page changed");
     this.spinner.show();
     this.suggestedSubs = this.movieService.getAllMovies(this.page, 20).subscribe((result :any)=> {
       this.spinner.hide();
