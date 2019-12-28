@@ -1,33 +1,34 @@
 
 <ngx-spinner></ngx-spinner>
-<table class="table table-hover table-dark">
-  <thead>
-    <tr>
-      <th scope="col">Title</th>
-      <th scope="col">Release Year</th>
-      <!-- <th scope="col">Fun Facts</th> -->
-      <th scope="col">Production Company</th>
-      <!-- <th scope="col">Distributor</th> -->
-      <th scope="col">Director</th>
-      <!-- <th scope="col">Writer</th> -->
-      <th scope="col">Main Actor</th>
-    </tr>
-  </thead>
-  <tbody>
-    <ng-container *ngFor="let movie of movies" class="cursor-pointer">
-      <tr (click)="showMovieDetails(movie.title)">
-          <td>{{movie?.title}}</td>
-          <td>{{movie?.release_year}}</td>
-          <!-- <td>{{movie.fun_facts}}</td> -->
-          <td>{{movie?.production_company}}</td>
-          <!-- <td>{{movie?.distributor}}</td> -->
-          <td>{{movie?.director}}</td>
-          <!-- <td>{{movie?.writer}}</td> -->
-          <td>{{movie?.actor_1}}</td>
-        </tr>
-    </ng-container>
-  </tbody>
-</table>
-
+<div class="table-responsive" id="sailorTableArea">
+  <table id="sailorTable" class="table table-striped table-bordered" width="100%">
+    <thead>
+      <tr>
+        <th scope="col">Title</th>
+        <th scope="col">Release Year</th>
+        <!-- <th scope="col">Fun Facts</th> -->
+        <!-- <th scope="col">Production Company</th> -->
+        <!-- <th scope="col">Distributor</th> -->
+        <th scope="col">Director</th>
+        <!-- <th scope="col">Writer</th> -->
+        <th scope="col">Main Actor</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let movie of movies" class="cursor-pointer">
+        <tr (click)="showMovieDetails(movie.title)">
+            <td class="fit elp">{{movie?.title}}</td>
+            <td class="fit elp">{{movie?.release_year}}</td>
+            <!-- <td class="fit elp">{{movie.fun_facts}}</td> -->
+            <!-- <td class="fit elp">{{movie?.production_company}}</td> -->
+            <!-- <td class="fit elp">{{movie?.distributor}}</td> -->
+            <td class="fit elp">{{movie?.director}}</td>
+            <!-- <td class="fit elp">{{movie?.writer}}</td> -->
+            <td class="fit elp">{{movie?.actor_1}}</td>
+          </tr>
+      </ng-container>
+    </tbody>
+  </table>
+</div>
 <ngb-pagination class="d-flex justify-content-center" [rotate]="true" [ellipses]="false" [collectionSize]="collectionSize" maxSize="5" [(page)]="page" (pageChange)="onPageChange($event)"></ngb-pagination>
 

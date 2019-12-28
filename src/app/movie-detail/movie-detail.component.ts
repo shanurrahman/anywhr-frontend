@@ -56,6 +56,15 @@ export class MovieDetailComponent implements OnInit, OnDestroy {
       this.spinner.hide();
       console.log(error);
     })
+
+    // Movies Db Integration here
+    // this.movieService.moviesdbapiListSearch(title).subscribe((data: any)=>{
+    //   this.movieService.moviesdbDetailSearch(data.results[0].id).subscribe((result: any)=>{
+    //     console.log(result);
+    //   })
+    // }, error=>{
+    //   console.log(error);
+    // })
   }
 
   wikiSearch(event) {

@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  url: 'localhost:3000'
+  url: 'localhost:3000',
+  moviesdbKey: 'f43d5e4ef26cf104430651cc377e36d0'
 };
 
 /*

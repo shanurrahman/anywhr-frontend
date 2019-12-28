@@ -3,12 +3,19 @@ import { IMOVIE } from './movie/movie.interface';
 export class CommonFormatter {
 
   joinValues(value) {
+    if(!value) {
+      return;
+    }
     return value.split('|').join(' | ');
   }
 
   formatMovie (movie: IMOVIE) {
+    if(!movie) {
+      return;
+    }
+
     if(movie.locations && movie.locations.length === 1) {
-      movie.locations = movie.locations[0].split('|');
+      movie.locations = movie.locations[0] && movie.locations[0].split('|');
     }
 
     Object.keys(movie).forEach(key=>{
