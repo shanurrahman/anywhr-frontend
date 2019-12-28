@@ -1,6 +1,13 @@
-# AnywhrFrontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.20.
+## Information 
+`Please change to https://github.com/shanurrahman/anywhr-frontend/tree/bootstrapped`
+
+## Refer to https://github.com/shanurrahman/anywhr-backend 
+` to get in depth on how this project was created`
+
+## Integrations
+`Wikipedia integration is also done`
+`Movie db api integration can be found in movie.service.ts`
 
 ## Development server
 
@@ -14,48 +21,5 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
 
-
-#### Database tables
-```
-create table movie
-(
-	title varchar(256) not null
-		constraint movie_pkey
-			primary key,
-	release_year varchar(128),
-	fun_facts varchar(339),
-	production_company varchar(256) default 'N/A'::character varying,
-	distributor varchar(256),
-	director varchar(79),
-	writer varchar(49),
-	actor_1 varchar,
-	actor_2 varchar,
-	actor_3 varchar
-);
-```
-
-
-```
-create table movie_location
-(
-	title varchar(45) not null,
-	locations varchar(110)
-);
-
-```
-Known Bugs
-` Search bar disappears on coming back to the homepage;  Reason=> Subscriber doesnot subscribe without page refresh;`
-` Since data was picked up from two different location on the web and wasnot properly formatted some lists show up as  strings with pipe symbol, need some time for ETL operations`

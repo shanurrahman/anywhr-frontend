@@ -15,7 +15,9 @@ export class CommonFormatter {
     }
 
     if(movie.locations && movie.locations.length === 1) {
-      movie.locations = movie.locations[0] && movie.locations[0].split('|');
+      if(movie.locations[0].indexOf('|')>=0) {
+        movie.locations = movie.locations[0] && movie.locations[0].split('|');
+      }
     }
 
     Object.keys(movie).forEach(key=>{

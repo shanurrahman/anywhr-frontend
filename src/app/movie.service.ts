@@ -62,13 +62,13 @@ export class MovieService {
 
 
   // Movies db integration here
-  public moviesdbapiListSearch(searchTerm) {
-    console.log(environment);
-    return this.http.get(`https://api.themoviedb.org/3/search/movie?api_key=${environment.moviesdbKey}&query=${searchTerm}`)
-  }
+  // public moviesdbapiListSearch(searchTerm) {
+  //   console.log(environment);
+  //   return this.http.get(`https://api.themoviedb.org/3/search/movie?api_key=${environment.moviesdbKey}&query=${searchTerm}`)
+  // }
 
-  public moviesdbDetailSearch(movieId) {
-    console.log(environment);
-    return this.http.get(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${environment.moviesdbKey}`)
-  }
+  // public moviesdbDetailSearch(movieId) {
+  //   console.log(environment);
+  //   return this.http.get(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${environment.moviesdbKey}`)
+  // }
 }
