@@ -7,6 +7,7 @@ import { NgxSpinnerService } from "ngx-spinner";
 import { Subscription } from 'rxjs';
 import { FormControl } from '@angular/forms';
 import {Constants} from '../names.constants';
+import CommonFormatter from '../common';
 
 
 
@@ -34,11 +35,13 @@ export class MovieComponent implements OnInit, OnDestroy {
   firstNameControl = new FormControl();
   formCtrlSub: Subscription;
   ngOnInit() {
+    this.pubsub.$pub(Constants.SEARCH_STATUS, true)
     this.initListeners();
     this.spinner.show();
     this.movieSubscription = this.movieService.getAllMovies(this.page, 20).subscribe((result: any) => {
       this.spinner.hide();
       this.movies = result.data;
+      CommonFormatter.formatAllMovies(this.movies);
       this.collectionSize = result.total;
     }, error => {
       this.spinner.hide();

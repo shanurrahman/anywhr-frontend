@@ -30,8 +30,6 @@ export class MenuComponent implements OnInit, OnDestroy {
     this.searchSub = this.pubsub.$sub(Constants.SEARCH_STATUS, data=>{
       this.searchStatus = data;
     })
-
-    this.pubsub.$pub(Constants.SEARCH_STATUS, true)
   }
 
   handleSearchClick(event){

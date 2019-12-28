@@ -3,10 +3,10 @@
   <div class="blog-post" (click)="wikiSearch($event)">
       <h2 class="blog-post-title">{{movie?.title}}</h2>
       <p class="blog-post-meta font-weight-bold"> Produced By <a>{{movie?.production_company}}</a></p>
-      <p class="blog-post-meta font-weight-bold"> Distributor <a>{{movie?.distributor}}</a></p>
-      <p class="blog-post-meta font-weight-bold">Writers <a>{{movie?.writer}}</a></p>
-      <p class="blog-post-meta font-weight-bold">Lead Actors <a>{{movie?.actor_1}} | {{movie?.actor_2}} | {{movie?.actor_3}}</a></p>
-      <p>{{movie?.fun_facts}}.</p>
+      <p *ngIf="movie?.distributor" class="blog-post-meta font-weight-bold"> Distributor <a>{{movie?.distributor}}</a></p>
+      <p *ngIf="movie?.writer" class="blog-post-meta font-weight-bold">Writers <a>{{movie?.writer}}</a></p>
+      <p *ngIf="movie?.actor_1" class="blog-post-meta font-weight-bold">Lead Actors <a>{{movie?.actor_1}} &nbsp; {{movie?.actor_2}} &nbsp; {{movie?.actor_3}}</a></p>
+      <p *ngIf="movie?.fun_facts">{{movie?.fun_facts}}.</p>
 
       <h6 style="color: maroon">This movie was shot at the following locations</h6>
       <ul>

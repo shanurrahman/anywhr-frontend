@@ -8,6 +8,7 @@ import {get} from 'lodash';
 import { PubsubService } from '../pubsub.service';
 import {Constants} from '../names.constants'
 import { isArray } from 'util';
+import CommonFormatter from '../common';
 
 @Component({
   selector: 'app-movie-detail',
@@ -43,12 +44,14 @@ export class MovieDetailComponent implements OnInit, OnDestroy {
       });
   }
 
+
   loadMovieData(title) {
     this.spinner.show();
     this.loadByTitleSub = this.movieService.getMovieShootingLocations(title).subscribe(data => {
       console.log(data);
       this.spinner.hide();
       this.movie = data;
+      this.movie = CommonFormatter.formatMovie(this.movie);
     }, error => {
       this.spinner.hide();
       console.log(error);
