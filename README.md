@@ -56,3 +56,6 @@ create table movie_location
 );
 
 ```
+Known Bugs
+` Search bar disappears on coming back to the homepage;  Reason=> Subscriber doesnot subscribe without page refresh;`
+` Since data was picked up from two different location on the web and wasnot properly formatted some lists show up as  strings with pipe symbol, need some time for ETL operations`
