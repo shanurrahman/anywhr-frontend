@@ -1,13 +1,14 @@
 
-## Information 
-`Please change to https://github.com/shanurrahman/anywhr-frontend/tree/bootstrapped`
-
-## Refer to https://github.com/shanurrahman/anywhr-backend 
-` to get in depth on how this project was created`
-
+## Component, Injectables and Routing documentation here
+[a documentation](documentation/index.html) 
 ## Integrations
-`Wikipedia integration is also done`
-`Movie db api integration can be found in movie.service.ts`
+
+`Wikipedia integration`
+`Movies db api integration can be found in movie.service.ts`
+
+## Component communication
+
+`Publish subscribe pattern used for inter-component communication`
 
 ## Development server
 
@@ -19,7 +20,23 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Run `ng build` to build the project. The build artifacts will be stored in the `../anywhr/public` directory. Use the `--prod` flag for a production build. The `../anywhr/public` is the static directory
+for express application. It is advisable to keep both the fronend and the backend application
+side by side. 
+
+## Integration
+
+Backend integration of this application is included at `https://github.com/shanurrahman/anywhr-backend`
+
+
+
+## Information 
+
+`Please change to https://github.com/shanurrahman/anywhr-frontend/tree/bootstrapped`
+
+## Refer to https://github.com/shanurrahman/anywhr-backend 
+
+` to get in depth on how this project was created`
 
 
 

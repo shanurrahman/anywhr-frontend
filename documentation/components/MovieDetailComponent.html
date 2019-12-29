@@ -1,0 +1,980 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>anywhr-frontend documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">anywhr-frontend documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>MovieDetailComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/movie-detail/movie-detail.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+                    <code><a href="https://angular.io/api/core/OnDestroy" target="_blank" >OnDestroy</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-movie-detail</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./movie-detail.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./movie-detail.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#contentLoading">contentLoading</a>
+                            </li>
+                            <li>
+                                <a href="#id">id</a>
+                            </li>
+                            <li>
+                                <a href="#loadByTitleSub">loadByTitleSub</a>
+                            </li>
+                            <li>
+                                <a href="#loadMovieSub">loadMovieSub</a>
+                            </li>
+                            <li>
+                                <a href="#more">more</a>
+                            </li>
+                            <li>
+                                <a href="#movie">movie</a>
+                            </li>
+                            <li>
+                                <a href="#orderObj">orderObj</a>
+                            </li>
+                            <li>
+                                <a href="#title">title</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#loadMovieData">loadMovieData</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnDestroy">ngOnDestroy</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#wikiSearch">wikiSearch</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(movieService: <a href="../injectables/MovieService.html">MovieService</a>, activatedRoute: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, spinner: NgxSpinnerService, pubsub: <a href="../injectables/PubsubService.html">PubsubService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/movie-detail/movie-detail.component.ts:18</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>movieService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/MovieService.html" target="_self" >MovieService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>activatedRoute</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>spinner</td>
+                                                  
+                                                        <td>
+                                                                    <code>NgxSpinnerService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>pubsub</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/PubsubService.html" target="_self" >PubsubService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadMovieData"></a>
+                    <span class="name">
+                        <b>
+                            loadMovieData
+                        </b>
+                        <a href="#loadMovieData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>loadMovieData(title)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="48"
+                            class="link-to-prism">src/app/movie-detail/movie-detail.component.ts:48</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>title</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnDestroy"></a>
+                    <span class="name">
+                        <b>
+                            ngOnDestroy
+                        </b>
+                        <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnDestroy()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="91"
+                            class="link-to-prism">src/app/movie-detail/movie-detail.component.ts:91</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="35"
+                            class="link-to-prism">src/app/movie-detail/movie-detail.component.ts:35</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="wikiSearch"></a>
+                    <span class="name">
+                        <b>
+                            wikiSearch
+                        </b>
+                        <a href="#wikiSearch"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>wikiSearch(event)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="70"
+                            class="link-to-prism">src/app/movie-detail/movie-detail.component.ts:70</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>event</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="contentLoading"></a>
+                        <span class="name">
+                            <b>
+                            contentLoading</b>
+                            <a href="#contentLoading"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/movie-detail/movie-detail.component.ts:34</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="id"></a>
+                        <span class="name">
+                            <b>
+                            id</b>
+                            <a href="#id"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/movie-detail/movie-detail.component.ts:28</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="loadByTitleSub"></a>
+                        <span class="name">
+                            <b>
+                            loadByTitleSub</b>
+                            <a href="#loadByTitleSub"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Subscription</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/movie-detail/movie-detail.component.ts:31</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="loadMovieSub"></a>
+                        <span class="name">
+                            <b>
+                            loadMovieSub</b>
+                            <a href="#loadMovieSub"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Subscription</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/movie-detail/movie-detail.component.ts:30</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="more"></a>
+                        <span class="name">
+                            <b>
+                            more</b>
+                            <a href="#more"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&#x27;&#x27;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/movie-detail/movie-detail.component.ts:33</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="movie"></a>
+                        <span class="name">
+                            <b>
+                            movie</b>
+                            <a href="#movie"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/IMOVIE.html" target="_self" >IMOVIE</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/movie-detail/movie-detail.component.ts:27</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="orderObj"></a>
+                        <span class="name">
+                            <b>
+                            orderObj</b>
+                            <a href="#orderObj"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/movie-detail/movie-detail.component.ts:29</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="title"></a>
+                        <span class="name">
+                            <b>
+                            title</b>
+                            <a href="#title"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/movie-detail/movie-detail.component.ts:32</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, OnDestroy } from &#x27;@angular/core&#x27;;
+import { MovieService } from &#x27;../movie.service&#x27;;
+import { IMOVIE } from &#x27;../movie/movie.interface&#x27;;
+import { ActivatedRoute } from &#x27;@angular/router&#x27;;
+import { Subscription } from &#x27;rxjs&#x27;;
+import { NgxSpinnerService } from &#x27;ngx-spinner&#x27;;
+import {get} from &#x27;lodash&#x27;;
+import { PubsubService } from &#x27;../pubsub.service&#x27;;
+import {Constants} from &#x27;../names.constants&#x27;
+import { isArray } from &#x27;util&#x27;;
+import CommonFormatter from &#x27;../common&#x27;;
+
+@Component({
+  selector: &#x27;app-movie-detail&#x27;,
+  templateUrl: &#x27;./movie-detail.component.html&#x27;,
+  styleUrls: [&#x27;./movie-detail.component.scss&#x27;]
+})
+export class MovieDetailComponent implements OnInit, OnDestroy {
+
+  constructor(
+    private movieService: MovieService,
+    private activatedRoute: ActivatedRoute,
+    private spinner: NgxSpinnerService,
+    private pubsub: PubsubService
+  ) { }
+
+  movie: IMOVIE
+  id: string;
+  orderObj: any;
+  loadMovieSub: Subscription;
+  loadByTitleSub: Subscription;
+  title: string;
+  more &#x3D; &#x27;&#x27;
+  contentLoading &#x3D; false;
+  ngOnInit() {
+    this.pubsub.$pub(Constants.SEARCH_STATUS, false);
+    this.activatedRoute
+      .queryParams
+      .subscribe(params &#x3D;&gt; {
+        this.title &#x3D; params.title || &#x27;&#x27;;
+        this.loadMovieData(this.title);
+      }, error&#x3D;&gt;{
+        console.log(error.message);
+      });
+  }
+
+
+  loadMovieData(title) {
+    this.spinner.show();
+    this.loadByTitleSub &#x3D; this.movieService.getMovieShootingLocations(title).subscribe(data &#x3D;&gt; {
+      console.log(data);
+      this.spinner.hide();
+      this.movie &#x3D; data;
+      this.movie &#x3D; CommonFormatter.formatMovie(this.movie);
+    }, error &#x3D;&gt; {
+      this.spinner.hide();
+      console.log(error);
+    })
+
+    // Movies Db Integration here
+    // this.movieService.moviesdbapiListSearch(title).subscribe((data: any)&#x3D;&gt;{
+    //   this.movieService.moviesdbDetailSearch(data.results[0].id).subscribe((result: any)&#x3D;&gt;{
+    //     console.log(result);
+    //   })
+    // }, error&#x3D;&gt;{
+    //   console.log(error);
+    // })
+  }
+
+  wikiSearch(event) {
+    this.more &#x3D; &quot;&quot;
+    let searchTerm &#x3D; event.target.innerHTML.trim();
+    this.contentLoading &#x3D; true;
+    this.movieService.wikiSearch(searchTerm).subscribe(res&#x3D;&gt;{
+      this.contentLoading&#x3D;false;
+      let data &#x3D; get(res, &#x27;query.search&#x27;, &#x27;Wiki server buzy&#x27;);
+      if(!isArray(data)){
+        console.log(res);
+        this.more&#x3D;res.error.info;
+      }else{
+        data.forEach(element &#x3D;&gt; {
+          this.more+&#x3D;element.snippet;
+          this.more+&#x3D;&quot;&lt;/br&gt;&quot;
+        });
+      }
+    }, error&#x3D;&gt;{
+      this.contentLoading &#x3D; false;
+    })
+  }
+
+  ngOnDestroy() {
+    this.loadMovieSub &amp;&amp; this.loadMovieSub.unsubscribe();
+    this.loadByTitleSub &amp;&amp; this.loadByTitleSub.unsubscribe();
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;ngx-spinner&gt;&lt;/ngx-spinner&gt;
+&lt;div class&#x3D;&quot;container mt-4&quot;&gt;
+  &lt;div class&#x3D;&quot;blog-post&quot;&gt;
+      &lt;h2 class&#x3D;&quot;blog-post-title&quot;&gt;{{movie?.title}}&lt;/h2&gt;
+      &lt;p class&#x3D;&quot;blog-post-meta font-weight-bold&quot;&gt; Produced By &lt;a&gt;{{movie?.production_company}}&lt;/a&gt;&lt;/p&gt;
+      &lt;p *ngIf&#x3D;&quot;movie?.distributor&quot; class&#x3D;&quot;blog-post-meta font-weight-bold&quot;&gt; Distributor &lt;a&gt;{{movie?.distributor}}&lt;/a&gt;&lt;/p&gt;
+      &lt;p *ngIf&#x3D;&quot;movie?.writer&quot; class&#x3D;&quot;blog-post-meta font-weight-bold&quot;&gt;Writers &lt;a&gt;{{movie?.writer}}&lt;/a&gt;&lt;/p&gt;
+      &lt;p *ngIf&#x3D;&quot;movie?.actor_1&quot; class&#x3D;&quot;blog-post-meta font-weight-bold&quot;&gt;Lead Actors &lt;a&gt;{{movie?.actor_1}} &amp;nbsp; {{movie?.actor_2}} &amp;nbsp; {{movie?.actor_3}}&lt;/a&gt;&lt;/p&gt;
+      &lt;p *ngIf&#x3D;&quot;movie?.fun_facts&quot;&gt;{{movie?.fun_facts}}.&lt;/p&gt;
+
+      &lt;h6 *ngIf&#x3D;&quot;movie?.locations?.length&gt;0&quot; style&#x3D;&quot;color: maroon&quot;&gt;This movie was shot at the following locations&lt;/h6&gt;
+      &lt;ul (click)&#x3D;&quot;wikiSearch($event)&quot;&gt;
+        &lt;li *ngFor&#x3D;&quot;let location of movie?.locations&quot; [ngStyle]&#x3D;&quot;{&#x27;color&#x27;:&#x27;maroon&#x27;, &#x27;cursor&#x27;: &#x27;pointer&#x27;}&quot;&gt;
+          {{location}}
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+    &lt;h4 *ngIf&#x3D;&quot;!more&quot;&gt; More information will appear&lt;/h4&gt;
+    &lt;div class&#x3D;&quot;spinner-border text-primary&quot; *ngIf&#x3D;&quot;contentLoading&quot; role&#x3D;&quot;status&quot;&gt;
+        &lt;span class&#x3D;&quot;sr-only&quot;&gt;Loading...&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;div class&#x3D;&quot;jumbotron&quot; *ngIf&#x3D;&quot;!!more&quot;&gt;&lt;code [innerHTML]&#x3D;&quot;more&quot;&gt;&lt;/code&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./movie-detail.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">html,
+body {
+  height: 100%;
+}
+
+#page-content {
+  flex: 1 0 auto;
+}
+
+#sticky-footer {
+  flex-shrink: none;
+}
+
+/* Other Classes for Page Styling */
+
+body {
+  background: #007bff;
+  background: linear-gradient(to right, #0062E6, #33AEFF);
+}
+
+
+.red {
+  color: &#x27;#33AEFF&#x27;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><ngx-spinner></ngx-spinner><div class="container mt-4">  <div class="blog-post">      <h2 class="blog-post-title">{{movie?.title}}</h2>      <p class="blog-post-meta font-weight-bold"> Produced By <a>{{movie?.production_company}}</a></p>      <p *ngIf="movie?.distributor" class="blog-post-meta font-weight-bold"> Distributor <a>{{movie?.distributor}}</a></p>      <p *ngIf="movie?.writer" class="blog-post-meta font-weight-bold">Writers <a>{{movie?.writer}}</a></p>      <p *ngIf="movie?.actor_1" class="blog-post-meta font-weight-bold">Lead Actors <a>{{movie?.actor_1}} &nbsp; {{movie?.actor_2}} &nbsp; {{movie?.actor_3}}</a></p>      <p *ngIf="movie?.fun_facts">{{movie?.fun_facts}}.</p>      <h6 *ngIf="movie?.locations?.length>0" style="color: maroon">This movie was shot at the following locations</h6>      <ul (click)="wikiSearch($event)">        <li *ngFor="let location of movie?.locations" [ngStyle]="{\'color\':\'maroon\', \'cursor\': \'pointer\'}">          {{location}}        </li>      </ul>    </div>    <h4 *ngIf="!more"> More information will appear</h4>    <div class="spinner-border text-primary" *ngIf="contentLoading" role="status">        <span class="sr-only">Loading...</span>      </div>    <div class="jumbotron" *ngIf="!!more"><code [innerHTML]="more"></code></div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'MenuComponent', 'selector': 'app-menu'},{'name': 'MovieComponent', 'selector': 'app-movie'},{'name': 'MovieDetailComponent', 'selector': 'app-movie-detail'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'MovieDetailComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'MovieDetailComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
