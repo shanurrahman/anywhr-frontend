@@ -130,8 +130,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="32"
-                            class="link-to-prism">src/app/common.ts:32</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="56"
+                            class="link-to-prism">src/app/common.ts:56</a></div>
                 </td>
             </tr>
 
@@ -200,8 +200,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="12"
-                            class="link-to-prism">src/app/common.ts:12</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="28"
+                            class="link-to-prism">src/app/common.ts:28</a></div>
                 </td>
             </tr>
 
@@ -270,8 +270,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="5"
-                            class="link-to-prism">src/app/common.ts:5</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="13"
+                            class="link-to-prism">src/app/common.ts:13</a></div>
                 </td>
             </tr>
 
@@ -328,6 +328,14 @@
 
 export class CommonFormatter {
 
+
+  /**
+   *
+   *
+   * @param {*} value
+   * @returns
+   * @memberof CommonFormatter
+   */
   joinValues(value) {
     if(!value) {
       return;
@@ -335,6 +343,14 @@ export class CommonFormatter {
     return value.split(&#x27;|&#x27;).join(&#x27; | &#x27;);
   }
 
+
+  /**
+   *
+   *
+   * @param {IMOVIE} movie
+   * @returns
+   * @memberof CommonFormatter
+   */
   formatMovie (movie: IMOVIE) {
     if(!movie) {
       return;
@@ -355,6 +371,14 @@ export class CommonFormatter {
     return movie;
   }
 
+
+  /**
+   *
+   *
+   * @param {IMOVIE[]} movies
+   * @returns
+   * @memberof CommonFormatter
+   */
   formatAllMovies(movies: IMOVIE[]) {
     movies.forEach((movie: IMOVIE)&#x3D;&gt; {
       movie &#x3D; this.formatMovie(movie);

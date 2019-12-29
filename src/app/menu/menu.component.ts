@@ -14,11 +14,24 @@ import {Constants} from '../names.constants';
 })
 export class MenuComponent implements OnInit, OnDestroy {
 
+
+  /**
+   *Creates an instance of MenuComponent.
+   * @param {Router} router
+   * @param {PubsubService} pubsub
+   * @memberof MenuComponent
+   */
   constructor(private router: Router, private pubsub: PubsubService) { }
   searchTerm = '';
   searchControl = new FormControl();
+  /** Keeps track of any value that changes, we then publish it in an event
+   * called Constants.Search
+   */
   formCtrlSub: Subscription;
+  /** To reomve subscription once component gets destroyed */
   searchSub: Subscription;
+
+  /** Whether or not to show the search bar */
   searchStatus = true;
   ngOnInit() {
     this.formCtrlSub = this.searchControl.valueChanges
@@ -32,12 +45,14 @@ export class MenuComponent implements OnInit, OnDestroy {
     })
   }
 
+  /** To publish SEARCH event from our mennu component to all the subscribers */
   handleSearchClick(event){
     this.pubsub.$pub(Constants.SEARCH, {
       searchTerm: event
     })
   }
 
+  /** House keeping stuff here */
   ngOnDestroy() {
     this.formCtrlSub.unsubscribe();
     this.searchSub && this.searchSub.unsubscribe();

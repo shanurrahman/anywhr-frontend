@@ -24,6 +24,15 @@ export class MovieComponent implements OnInit, OnDestroy {
   suggestedSubs: Subscription;
   pbsb: Subscription;
 
+
+  /**
+   *Creates an instance of MovieComponent.
+   * @param {MovieService} movieService
+   * @param {PubsubService} pubsub
+   * @param {Router} router
+   * @param {NgxSpinnerService} spinner
+   * @memberof MovieComponent
+   */
   constructor(
     private movieService: MovieService,
     private pubsub: PubsubService,
@@ -32,8 +41,29 @@ export class MovieComponent implements OnInit, OnDestroy {
   ) { }
 
 
+
+  /**
+   *
+   *
+   * @memberof MovieComponent
+   */
   firstNameControl = new FormControl();
+
+
+  /**
+   *
+   *
+   * @type {Subscription}
+   * @memberof MovieComponent
+   */
   formCtrlSub: Subscription;
+
+
+  /**
+   *
+   *
+   * @memberof MovieComponent
+   */
   ngOnInit() {
     this.pubsub.$pub(Constants.SEARCH_STATUS, true)
     this.initListeners();
@@ -49,6 +79,7 @@ export class MovieComponent implements OnInit, OnDestroy {
     });
   }
 
+  /** Initializes all listeners in this component */
   initListeners() {
     this.pbsb = this.pubsub.$sub(Constants.SEARCH, data => {
       console.log(data)
@@ -56,11 +87,20 @@ export class MovieComponent implements OnInit, OnDestroy {
     });
   }
 
-  showMovieDetails(title) {
+
+
+  /**
+   *
+   *
+   * @param {string} title
+   * @memberof MovieComponent
+   */
+  showMovieDetails(title: string) {
     console.log(title);
     this.router.navigate(['/movie'], { queryParams: { title } });
   }
 
+  /** Retrives a list of movies based on what was entered in the search box */
   showSuggestedMovies(searchTerm) {
     this.spinner.show();
     this.movieService.getSuggestedMovies(searchTerm).subscribe((result: any)=>{
@@ -72,6 +112,13 @@ export class MovieComponent implements OnInit, OnDestroy {
     })
   }
 
+
+  /**
+   *
+   * binds to a pagination hook and then retrives data from the backend
+   * @param {*} e
+   * @memberof MovieComponent
+   */
   onPageChange(e) {
     this.spinner.show();
     this.suggestedSubs = this.movieService.getAllMovies(this.page, 20).subscribe((result :any)=> {
@@ -84,6 +131,8 @@ export class MovieComponent implements OnInit, OnDestroy {
     });
   }
 
+
+  /** Removes subscription to prevent memory leaks */
   ngOnDestroy(){
     this.movieSubscription && this.movieSubscription.unsubscribe();
     this.suggestedSubs && this.suggestedSubs.unsubscribe();

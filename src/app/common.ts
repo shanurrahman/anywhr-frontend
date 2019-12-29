@@ -2,6 +2,14 @@ import { IMOVIE } from './movie/movie.interface';
 
 export class CommonFormatter {
 
+
+  /**
+   *
+   *
+   * @param {*} value
+   * @returns
+   * @memberof CommonFormatter
+   */
   joinValues(value) {
     if(!value) {
       return;
@@ -9,6 +17,14 @@ export class CommonFormatter {
     return value.split('|').join(' | ');
   }
 
+
+  /**
+   *
+   *
+   * @param {IMOVIE} movie
+   * @returns
+   * @memberof CommonFormatter
+   */
   formatMovie (movie: IMOVIE) {
     if(!movie) {
       return;
@@ -29,6 +45,14 @@ export class CommonFormatter {
     return movie;
   }
 
+
+  /**
+   *
+   *
+   * @param {IMOVIE[]} movies
+   * @returns
+   * @memberof CommonFormatter
+   */
   formatAllMovies(movies: IMOVIE[]) {
     movies.forEach((movie: IMOVIE)=> {
       movie = this.formatMovie(movie);

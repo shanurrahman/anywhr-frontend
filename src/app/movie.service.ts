@@ -9,6 +9,12 @@ export class MovieService {
   // this will come from the environment file
   apiURL: string = environment.url;
 
+
+  /**
+   *Creates an instance of MovieService.
+   * @param {HttpClient} http
+   * @memberof MovieService
+   */
   constructor(
     private http: HttpClient
   ) { }
@@ -16,32 +22,80 @@ export class MovieService {
   /**  @Todo remove any after defining types
    * Also send pagination data
   */
-  public getAllMovies(page = 1, perPage = 20) {
+  /**
+   *
+   *
+   * @param {number} [page=1]
+   * @param {number} [perPage=20]
+   * @returns
+   * @memberof MovieService
+   */
+  public getAllMovies(page: number = 1, perPage: number = 20) {
     // can use a pipe and map operator to send exactly what is required
     return this.http.get<any[]>(`${this.apiURL}/movies?page=${page}&perPage=${perPage}`);
   }
 
-  public getMovieById(id) {
+
+  /**
+   *
+   *
+   * @param {number} id
+   * @returns
+   * @memberof MovieService
+   */
+  public getMovieById(id: number) {
     // can use a pipe and map operator to send exactly what is required
     return this.http.get<any>(`${this.apiURL}/movies/${id}`);
   }
 
-  public getMovieByTitle(title) {
+
+  /**
+   *
+   *
+   * @param {string} title
+   * @returns
+   * @memberof MovieService
+   */
+  public getMovieByTitle(title: string) {
     // can use a pipe and map operator to send exactly what is required
     return this.http.get<any>(`${this.apiURL}/movies?title=${title}`);
   }
 
-  public getSuggestedMovies(searchTerm) {
+
+  /**
+   *
+   *
+   * @param {string} searchTerm
+   * @returns
+   * @memberof MovieService
+   */
+  public getSuggestedMovies(searchTerm: string) {
     // can use a pipe and map operator to send exactly what is required
     return this.http.get<any>(`${this.apiURL}/movies/suggest?title=${searchTerm}`);
   }
 
-  public getMovieShootingLocations(title) {
+
+  /**
+   *
+   *
+   * @param {string} title
+   * @returns
+   * @memberof MovieService
+   */
+  public getMovieShootingLocations(title: string) {
     // can use a pipe and map operator to send exactly what is required
     return this.http.get<any>(`${this.apiURL}/movies/shotLocation?title=${title}`);
   }
 
-  public wikiSearch(term) {
+
+  /**
+   *
+   *
+   * @param {string} term
+   * @returns
+   * @memberof MovieService
+   */
+  public wikiSearch(term: string) {
     let url = 'https://en.wikipedia.org/w/api.php';
 
     const params = {
