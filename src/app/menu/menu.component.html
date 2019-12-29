@@ -1,6 +1,8 @@
 <nav class="navbar navbar-light bg-light">
   <a class="navbar-brand" [routerLink]="['/']">ANYWHR</a>
   <form class="form-inline">
+      <!-- target="_blank" routerLink="/Page2" -->
+    <a type="button" target="_blank" href="documentation" class="btn btn-success btn-circle btn-sm"><i class="fa fa-space-shuttle faa-passing animated">Documentation</i></a>
     <input *ngIf="searchStatus" type="search" name="ara" class="form-control ml-4" placeholder="Enter Movie Name" [formControl]="searchControl"/>
   </form>
 </nav>

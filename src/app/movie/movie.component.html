@@ -15,7 +15,7 @@
       </tr>
     </thead>
     <tbody>
-      <ng-container *ngFor="let movie of movies" class="cursor-pointer">
+      <ng-container *ngFor="let movie of movies" style="cursor: pointer;">
         <tr (click)="showMovieDetails(movie.title)">
             <td class="fit elp">{{movie?.title}}</td>
             <td class="fit elp">{{movie?.release_year}}</td>

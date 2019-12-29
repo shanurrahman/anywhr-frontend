@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "compodoc": "npx compodoc --hideGenerator --output ../anywhr/frontend/documentation -p tsconfig.json"
+    "compodoc": "npx compodoc --hideGenerator --output ../anywhr/documentation -p tsconfig.json"
   },
   "private": true,
   "dependencies": {

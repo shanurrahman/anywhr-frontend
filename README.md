@@ -1,6 +1,7 @@
 
-## Component, Injectables and Routing documentation here
-[a documentation](documentation/index.html) 
+## A complete documentation on Component, Injectables and Routing documentation here 
+>http://3.1.20.178:3000/documentation
+
 ## Integrations
 
 `Wikipedia integration`
